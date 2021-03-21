@@ -1,0 +1,13 @@
+body {
+    background: antiquewhite;
+}
+
+form {
+    margin-top: 150px;
+    margin-left: 32%;
+    width: 500px;
+}
+
+.form-control {
+    margin-top: 10px;
+}

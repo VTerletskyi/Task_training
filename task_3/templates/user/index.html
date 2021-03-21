@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'user/css/user.css' %}">
+</head>
+<body>
+    <div class="register">
+        <h1>Форма для реєстрації</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.user_name }}
+            {{ form.email }}
+            {{ form.password }}
+            <span>{{ error }}</span>
+            <button class="btn dtn-success" type="submit">Зареєструватись</button>
+        </form>
+    </div>
+</body>
+</html>

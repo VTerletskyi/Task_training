@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
+</head>
+<body>
+    {% if news %}
+        {% for el in news %}
+            <div class="alert alert-warning">
+                <h3 class="title">{{ el.title }}</h3>
+                <img src="{{ el.image }}">
+                <p class="post_body">{{ el.body_post }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Потрібно написати статтю, щоб тут її відобразило</p>
+    {% endif %}
+</body>
+</html>

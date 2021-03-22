@@ -12,3 +12,10 @@ class Post(models.Model):
     def __str__(self):
         return "Заголовок: {}".format(self.title)
 
+    def get_absolute_url(self):
+        return f'/post/{self.id}'
+
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+

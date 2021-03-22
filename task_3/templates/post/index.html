@@ -20,11 +20,16 @@
 {#        <p>Потрібно написати статтю, щоб тут її відобразило</p>#}
 {#    {% endif %}#}
 
+
+    <a href="{% url 'newpost' %}" class="btn btn-warning">Написати статтю</a> <br>
+{#    <a href="{% url 'join' %}" class="btn btn-warning">Реєстрація</a>#}
+
     {% for el in post %}
         <div class="alert alert-warning">
             <h1>{{ el.title }}</h1>
             <img src="{{ el.image }}" alt="post_image">  {#ця строка не відображає фото#}
             <p>{{ el.body_post }}</p>
+            <a href="{% url 'post-detail' el.id %}" class="btn btn-warning">Відкрити статтю</a>
         </div>
     {% endfor %}
 

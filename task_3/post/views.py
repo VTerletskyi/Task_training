@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, UpdateView, DeleteView
 
 
 class PostDetailView(DetailView):
@@ -14,6 +14,19 @@ class PostView(ListView):
     model = Post
     template_name = "post/index.html"
     context_object_name = "post"
+
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = "post/newpost.html"
+
+    form_class = PostForm
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+    success_url = '/'
+    template_name = "post/posts-delete.html"
 
 
 # def index(request):

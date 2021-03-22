@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Головна сторінка</title>
+    <title>{{ post.title }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
 </head>
@@ -12,6 +12,9 @@
         <h1>{{ post.title }}</h1>
         <img src="{{ post.image }}" alt="post_image">
         <p>{{ post.body_post }}</p>
+        <a href="{% url 'post-delete' post.id %}" class="btn bnt-danger">Видалити</a>
+        <a href="{% url 'post-update' post.id %}" class="btn bnt-info">Редагувати</a>
     </div>
+
 </body>
 </html>

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
+</head>
+<body>
+    <div class="alert alert-warning">
+        <h1>{{ post.title }}</h1>
+        <img src="{{ post.image }}" alt="post_image">
+        <p>{{ post.body_post }}</p>
+    </div>
+</body>
+</html>

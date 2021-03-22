@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Нова стаття</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
+</head>
+<body>
+    <div class="register">
+        <h1>Форма для створення статті</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.user }}
+            {{ form.title }}
+            {{ form.body_post }}
+            {{ form.image }}<br>
+            <span>{{ error }}</span><br>
+            <button class="btn dtn-success" type="submit">Опублікувати</button>
+        </form>
+    </div>
+</body>
+</html>

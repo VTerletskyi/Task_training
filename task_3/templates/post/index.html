@@ -8,16 +8,25 @@
     <link rel="stylesheet" href="{% static 'post/css/post.css' %}">
 </head>
 <body>
-    {% if news %}
-        {% for el in news %}
-            <div class="alert alert-warning">
-                <h3 class="title">{{ el.title }}</h3>
-                <img src="{{ el.image }}">
-                <p class="post_body">{{ el.body_post }}</p>
-            </div>
-        {% endfor %}
-    {% else %}
-        <p>Потрібно написати статтю, щоб тут її відобразило</p>
-    {% endif %}
+{#    {% if news %}#}
+{#        {% for el in news %}#}
+{#            <div class="alert alert-warning">#}
+{#                <h3 class="title">{{ el.title }}</h3>#}
+{#                <img src="{{ el.image }}"  alt="Post_image">#}
+{#                <p class="post_body">{{ el.body_post }}</p>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#        <p>Потрібно написати статтю, щоб тут її відобразило</p>#}
+{#    {% endif %}#}
+
+    {% for el in post %}
+        <div class="alert alert-warning">
+            <h1>{{ el.title }}</h1>
+            <img src="{{ el.image }}" alt="post_image">  {#ця строка не відображає фото#}
+            <p>{{ el.body_post }}</p>
+        </div>
+    {% endfor %}
+
 </body>
 </html>

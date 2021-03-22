@@ -20,3 +20,13 @@ body {
     margin: auto;
     color: black;
 }
+
+form {
+    margin-top: 150px;
+    margin-left: 32%;
+    width: 500px;
+}
+
+.form-control {
+    margin-top: 10px;
+}

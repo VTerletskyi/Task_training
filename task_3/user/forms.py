@@ -11,7 +11,7 @@ class UserForm(ModelForm):
             "user_name": TextInput(attrs={
                 "class": "form-control",
                 "placeholder": "Ім'я"
-        }),
+            }),
             "email": TextInput(attrs={
                 "class": "form-control",
                 "placeholder": "Електронна пошта"
